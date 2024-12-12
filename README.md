@@ -14,6 +14,7 @@ The project structure is as follows:
 - **docker-compose.yml**: Defines the services, networks, and volumes for the Docker containers.
 - **index.js**: Main API Gateway logic, which handles routing and requests to the different services (Books, Users, Loans).
 - **package.json**: Manages project dependencies, scripts, and metadata.
+- **Microservices-efrei.postman_collection.json**: The collection to import in Postman (the url: http://localhost:8085).
 
 ## Prerequisites
 
@@ -21,6 +22,7 @@ Before running the API Gateway, make sure you have the following installed:
 
 - **Node.js** (for local development)
 - **Docker** and **Docker Compose** (to run the services in containers)
+- **Postman** (to test the microservices)
 
 ## Running the API Gateway
 
