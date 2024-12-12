@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "f3f1edd6-7fcb-4e9d-b67c-a8ec3dd8671e",
+		"name": "Microservices-efrei",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40370826",
+		"_collection_link": "https://api-microservice.postman.co/workspace/API-microservice-Workspace~c68f884e-9de2-4250-96e6-8ce46ccaf99d/collection/40370826-f3f1edd6-7fcb-4e9d-b67c-a8ec3dd8671e?action=share&source=collection_link&creator=40370826"
+	},
+	"item": [
+		{
+			"name": "book_services",
+			"item": [
+				{
+					"name": "getAllBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"title\": \"The Pragmatic Programmer\",    \"author\": \"David Thomas\",    \"published_year\": 1999,    \"isbn\": \"978-0201616224\",    \"availability\": true }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \"title\": \"The Pragmatic Programmer (Updated)\",    \"author\": \"David Thomas\",    \"published_year\": 2000,    \"isbn\": \"978-0201616224\",    \"availability\": true  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get avaibility a book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books/1/availability",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"1",
+								"availability"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users_services",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jean\",\r\n    \"lastName\": \"Dupont\",\r\n    \"email\": \"mje.espinosa@gmail.com\",\r\n    \"password\": \"Password1\",\r\n    \"bio\": \"Développeur passionné par la technologie.\",\r\n    \"birth\": \"1990-05-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a penalities",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/penalties/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"penalties",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check-delays",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/penalties/check-delays",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"penalties",
+								"check-delays"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/penalties/pay",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"penalties",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "valid-user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/valid-user/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"valid-user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "loans-services",
+			"item": [
+				{
+					"name": "loans a book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\":2,\r\n    \"userId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/loans",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return a book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/loans/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"loans",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
